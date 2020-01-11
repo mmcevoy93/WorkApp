@@ -25,25 +25,25 @@ def title_screen():
                   size_hint=(1,1))
     intro.add_widget(title)
 
-    taskbuttons = BoxLayout(padding = [50,50,50,50], spacing = 20)
+    taskbuttons = BoxLayout(padding = [50,50,50,50], spacing = 20,orientation='vertical')
     daily = Button(text="Daily Maintenance",
                 halign="center",
                 valign="center",
-                size_hint=(0.3,1))
+                size_hint=(1, 0.3))
     daily.bind(on_press=go_to_daily)
 
     weekly = Button(text="Weekly Maintenance",
                 halign="center",
                 valign="center",
-                size_hint=(0.3,1))
+                size_hint=(1, 0.3))
     assigned = Button(text="Assigned Checklists",
                 halign="center",
                 valign="center",
-                size_hint=(0.3,1))
+                size_hint=(1, 0.3))
     lockers = Button(text="Locker Entries",
                 halign="center",
                 valign="center",
-                size_hint=(0.3,1))
+                size_hint=(1, 0.3))
     taskbuttons.add_widget(daily)
     taskbuttons.add_widget(weekly)
     taskbuttons.add_widget(assigned)
@@ -73,10 +73,8 @@ def duties(info):
             btn = Button(text=key+"\n\n"+info.tasks[key][1]+"\npoints",
                          text_size=(layout.width, None),
                          size_hint_y=None,
-                         size_hint_x=None,
-                         width = 200,
                          halign="center",
-                         height=200,
+                         height=400,
                          background_color=color)
             btn.bind(on_press=go_to_names)
             layout.add_widget(btn)
