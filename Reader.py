@@ -50,9 +50,9 @@ class Duties:
             for row in reader:
                 self.tasks[row["task"]] = [row["frequency"], row["points"]]
 
-
     def point_value(self, task):
         return self.tasks[task][1]
+        
 '''
     def subtract_points(self, name, points):
         self.staff[name][2]= str(int(self.staff[name][2]) - points)
